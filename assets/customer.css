@@ -1,3 +1,12 @@
 body {
     background: #efefef;
 }
+
+@media (min-width: 768px) {
+    .logo-name {
+        text-align: center;
+        padding: 0px 5px;
+        width: 200px;
+    }
+}
+
