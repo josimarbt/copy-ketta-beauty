@@ -10,3 +10,59 @@ body {
     }
 }
 
+.navbar-icon-links {
+    display: none;
+}
+
+@media only screen and (max-width: 830px) {
+    .navbar {
+        padding: 0 20px !important; 
+    }
+}
+
+@media only screen and (max-width: 1100px) {
+    .navbar {
+        padding: 0 30px;
+    }
+
+    .navbar-icon-links {
+        display: block;
+        cursor: pointer;
+    }
+
+    .menu-navbar-links {
+        display: none;
+    }
+
+    .icon-tablet-links {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        right: 0px;
+        top: 45px;
+        background: whitesmoke;
+        width: 200px;
+        height: auto;
+        padding: 15px 0px;
+    }
+
+    .links-login-register a {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .links-login-register a:first-child {
+        padding-bottom: 15px;
+    }
+}
+
+@media only screen and (min-width: 1100px) {
+    .navbar {
+        padding: 0 35px;
+    }
+
+    .menu-navbar-links a {
+        padding: 0 10px;
+    }
+}
