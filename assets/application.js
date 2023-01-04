@@ -1,8 +1,17 @@
-// Put your application javascript here
-if(window.innerWidth <= 980){
-    let navbar_tablet = document.getElementsByClassName("account-cart-links");
-    let img = "https://icons.veryicon.com/png/o/internet--web/prejudice/user-128.png";
+// // Put your application javascript here
+//this code is for hide the links for "login" and "register" on tablet size.
+let tabletSize = window.matchMedia("(max-width: 970px)");
 
-    navbar_tablet.removeChild(navbar_tablet.firstChild);
-    navbar_tablet.appendChild(img);
-}
+tabletSize.onchange = (e) => {
+    let menuNavbarLinks = document.getElementById("menu_navbar_links");
+    let navbarIconLinks = document.getElementById("navbar_icon_links");
+
+    if(e.matches) {
+        menuNavbarLinks.classList.add("hidden");
+        navbarIconLinks.classList.remove("hidden");
+    } else {
+        menuNavbarLinks.classList.remove("hidden");
+        navbarIconLinks.classList.add("hidden");
+    };
+};
+
