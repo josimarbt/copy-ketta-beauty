@@ -66,3 +66,43 @@ body {
         padding: 0 10px;
     }
 }
+
+.collection-grid {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-rows: 1fr;
+    position: relative;
+}
+
+.grid-container {
+    height: 100%;
+    position: relative;
+}
+
+.grid-container img {
+    background-color: rgba(151, 163, 163, 0.295);
+}
+
+.card-product-title {
+    position: absolute;
+    top: 8px;
+    left: 16px;
+}
+
+.card-product-button {
+    display: flex;
+    white-space: nowrap;
+    background: #ffff;
+    padding: 10px 10px;
+    width: 25%;
+    height: 55px;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 30px;
+    right: 35px;
+}
+
+.card-product-button a{
+    display: inline-block;
+}

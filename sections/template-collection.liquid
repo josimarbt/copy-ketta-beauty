@@ -1,0 +1,40 @@
+<div class="py-8">
+    {% paginate collection.products by 6 %}
+        <h1 class="text-3xl text-center text-indigo-700 tracking-widest font-normal">{{ collection.title }}</h1>
+
+        <div class="mx-auto">
+            <div class="collection-grid py-8">
+                {% for product in collection.products %}
+                    <div class="py-6">
+                        <div class="grid-container border bg-white overflow-hidden">
+                            <a href="{{ product.url }}">
+                                {% if product.featured_image %}
+                                    <div class="h-1/2 overflow-hidden">
+                                        <img class="w-full h-full object-contain" src="{{ product.featured_image | img_url: 'master' }}" alt="{{ product.featured_image.alt }}" loading="lazy">
+                                    </div>
+                                {% endif %}
+                                <div class="px-3 py-4 card-product-title">
+                                 {% if product.type %}
+                                    <h3 class="text-sm text-gray-600">{{ product.type }}</h3>
+                                 {% endif %}
+                                 <a class="font-normal text-lg tracking-widest" href="{{ product.url }}">{{ product.title }}</a> 
+                                </div>
+                            </a>
+                           
+                           <div class="px-4 py-6 shadow-lg w-full text-gray-700 card-product-button">
+                              {% render 'icon-shopping-bag' %}
+                              <a class="px-2 font-medium tracking-widest" href="{{ cart.url }}">
+                                 {{ product.price | money_without_trailing_zeros }}
+                              </a>
+                           </div>
+                        </div>
+                    </div>
+                {% else %} 
+                     <h3>There are no products inside of this collection</h3>
+                {% endfor %}
+            </div>
+        </div>
+
+        {% render 'pagination', pagination: paginate %}
+    {% endpaginate %}
+</div>
